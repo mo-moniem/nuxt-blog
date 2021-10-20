@@ -45,8 +45,8 @@ export default {
     extendRoutes(routes,resolve){
       routes.push({
         name:"blog2",
-        path:"/posts/",
-        component:resolve(__dirname,'custom-pages/404.vue')
+        path:"/posts",
+        component:resolve(__dirname,'custom-pages/test.vue')
       })
     }
   },
