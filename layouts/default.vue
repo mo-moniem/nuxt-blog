@@ -1,21 +1,30 @@
 <template>
 <div>
-  <header>
-    <h1>header</h1>
-  </header>
+  <AppHeader/>
   <Nuxt/>
-  <footer>
-    <h4>footer</h4>
-  </footer>
+  <AppFooter/>
 </div>
 </template>
 
 <script>
+import AppHeader from "../components/AppHeader";
+import AppFooter from "../components/AppFooter";
 export default {
-  name: "default"
+  name: "default",
+  components: {AppFooter, AppHeader}
 }
 </script>
 
-<style scoped>
-
+<style >
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.mainTitle{
+  text-align: center;
+  margin: 10px auto;
+}
 </style>

@@ -1,7 +1,8 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'nuxt-blog',
+    title: 'Home',
+    titleTemplate: 'nuxt-blog | %s',
     htmlAttrs: {
       lang: 'en'
     },
@@ -19,9 +20,14 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
   ],
-
+  loading:{
+    failedColor:"#f44",
+    color:"#44b4ff",
+    height:"3px"
+  },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    {src:"~/plugins/hello.js",mode:""}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -38,18 +44,20 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL:"https://jsonplaceholder.typicode.com"
+  },
 
   // Router Property
   router:{
     extendRoutes(routes,resolve){
-      routes.push({
-        name:"blog2",
-        path:"/posts",
-        component:resolve(__dirname,'custom-pages/test.vue')
-      })
+      routes.push()
     }
   },
+  // Server Middleware
+  serverMiddleware:[
+    {path:'blogs',handler:'~/server-middleware/logger.js'},
+  ],
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }

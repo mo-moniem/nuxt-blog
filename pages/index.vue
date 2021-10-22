@@ -1,11 +1,11 @@
 <template>
  <div>
-   <h1>Home</h1>
-   <nuxt-link to="blogs">blogs</nuxt-link>
+   <h1 class="mainTitle">Home</h1>
  </div>
 </template>
 
 <script>
 export default {
+  middleware: ['hi','welcome']
 }
 </script>
